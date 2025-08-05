@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your-Cart-Olaga Inc</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Olaga Inc </h1>
+  </header>
+
+  <main class="cart-container">
+    <div id="cart-items"></div>
+    <div class="cart-total">
+      <h2>Total: ₹<span id="cart-total">0</span></h2>
+    </div>
+    <div class="cart-actions">
+      <button class="big-btn" onclick="goToPayment()">Buy Now</button>
+      <button class="big-btn" onclick="window.location.href='index.html'">Continue Shopping</button>
+    </div>
+  </main>
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsDiv = document.getElementById('cart-items');
+      const cartTotalSpan = document.getElementById('cart-total');
+
+      cartItemsDiv.innerHTML = '';
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        total += item.price;
+        cartItemsDiv.innerHTML += `
+          <div class="cart-item">
+            <span>${item.name}</span>
+            <span>₹${item.price}</span>
+            <button class="remove-btn" onclick="removeItem(${index})">✖</button>
+          </div>
+        `;
+      });
+
+      cartTotalSpan.textContent = total;
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    function goToPayment() {
+      window.location.href = 'payment.html';
+    }
+
+    loadCart();
+  </script>
+
+</body>
+</html>

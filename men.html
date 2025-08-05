@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Olaga Inc - Men</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Olaga Inc</h1>
+  </header>
+
+  <main class="product-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Men's Tee">
+      <h3>Men's Classic Tee</h3>
+      <p>₹799</p>
+      <button class="big-btn" onclick="addToCart('Men\'s Classic Tee', 799)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Men's Polo">
+      <h3>Men's Polo Shirt</h3>
+      <p>₹999</p>
+      <button class="big-btn" onclick="addToCart('Men\'s Polo Shirt', 999)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Men's Hoodie">
+      <h3>Men's Hoodie</h3>
+      <p>₹1299</p>
+      <button class="big-btn" onclick="addToCart('Men\'s Hoodie', 1299)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Men's V-Neck">
+      <h3>Men's V-Neck Tee</h3>
+      <p>₹899</p>
+      <button class="big-btn" onclick="addToCart('Men\'s V-Neck Tee', 899)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Men's Sweatshirt">
+      <h3>Men's Sweatshirt</h3>
+      <p>₹1199</p>
+      <button class="big-btn" onclick="addToCart('Men\'s Sweatshirt', 1199)">Add to Cart</button>
+    </div>
+  </main>
+
+  <!-- Popup bar -->
+  <div id="cart-popup">
+    Item added to cart! <button onclick="window.location.href='cart.html'">Go to Cart</button>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

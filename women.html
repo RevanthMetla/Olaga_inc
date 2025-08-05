@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Olaga Inc - Women</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Olaga Inc</h1>
+  </header>
+
+  <main class="product-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Women's Tee">
+      <h3>Women's Classic Tee</h3>
+      <p>₹749</p>
+      <button class="big-btn" onclick="addToCart('Women\'s Classic Tee', 749)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Women's Tank">
+      <h3>Women's Tank Top</h3>
+      <p>₹599</p>
+      <button class="big-btn" onclick="addToCart('Women\'s Tank Top', 599)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Women's Hoodie">
+      <h3>Women's Hoodie</h3>
+      <p>₹1299</p>
+      <button class="big-btn" onclick="addToCart('Women\'s Hoodie', 1299)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Women's Blouse">
+      <h3>Women's Blouse</h3>
+      <p>₹899</p>
+      <button class="big-btn" onclick="addToCart('Women\'s Blouse', 899)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Women's Sweatshirt">
+      <h3>Women's Sweatshirt</h3>
+      <p>₹1199</p>
+      <button class="big-btn" onclick="addToCart('Women\'s Sweatshirt', 1199)">Add to Cart</button>
+    </div>
+  </main>
+
+  <!-- Popup bar -->
+  <div id="cart-popup">
+    Item added to cart! <button onclick="window.location.href='cart.html'">Go to Cart</button>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

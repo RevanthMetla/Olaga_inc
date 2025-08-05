@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment - Olaga Inc</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Olaga Inc - Payment</h1>
+  </header>
+
+  <main class="payment-container">
+    <h2>Complete Your Purchase</h2>
+    <p>Total Amount: ₹<span id="payment-total">0</span></p>
+
+    <div class="payment-options">
+      <button class="big-btn" onclick="simulatePayment()">Pay Now</button>
+      <button class="big-btn" onclick="window.location.href='cart.html'">Back to Cart</button>
+    </div>
+  </main>
+
+  <script>
+    function loadPaymentTotal() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let total = cart.reduce((sum, item) => sum + item.price, 0);
+      document.getElementById('payment-total').textContent = total;
+    }
+
+    function simulatePayment() {
+      alert("Payment Successful! 🎉 Thank you for shopping with Olaga Inc.");
+      localStorage.removeItem('cart');
+      window.location.href = 'index.html';
+    }
+
+    loadPaymentTotal();
+  </script>
+
+</body>
+</html>
